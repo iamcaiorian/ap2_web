@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import AlunoService from '../services/AlunoService';
 
 export function CirarAluno() {
+    const navigate = useNavigate();
 
     const [nome, setNome] = useState('');
     const [curso, setCurso] = useState('');
@@ -9,6 +12,22 @@ export function CirarAluno() {
     function handleSubmit(e) {
         e.preventDefault();
         console.log(nome, curso, ira);
+       
+        const alunoService = new AlunoService();
+        alunoService.createAluno({nome, curso, ira})
+            .then(res => {
+                console.log(res.data);
+                alert('Aluno criado com sucesso!');
+                navigate('/listar-alunos');
+            })
+            .catch(err => {
+                console.error(err);
+                alert('Erro ao criar aluno!');
+            });
+
+        setNome('');
+        setCurso('');
+        setIra('');
     }
 
     return (

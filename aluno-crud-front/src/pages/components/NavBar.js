@@ -22,6 +22,9 @@ export function NavBar() {
                                     <Link className='nav-link active' to="/listar-alunos">Listar Alunos</Link>
                                 </li>
                                 <li className='nav-item'>
+                                    <Link className='nav-link active' to="/listar-alunos-por-curso">Listar Por Curso</Link>
+                                </li>
+                                <li className='nav-item'>
                                     <Link className='nav-link active' to="/criar-aluno">Criar Aluno</Link>
                                 </li>
                             </ul>

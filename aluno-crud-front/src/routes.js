@@ -5,6 +5,7 @@ import { CirarAluno } from './pages/CirarAluno';
 import { EditarAluno }from './pages/EditarAluno';
 import { ListarAlunos } from './pages/ListarAlunos';
 import { DeletarAluno } from './pages/DeletarAluno';
+import { ListarAlunosPorCurso } from './pages/ListarAlunosPorCurso';
 
 
 export const router = createBrowserRouter([
@@ -17,7 +18,7 @@ export const router = createBrowserRouter([
                 element: <CirarAluno />
             },
             {
-                path: 'editar-aluno',
+                path: 'editar-aluno/:id',
                 element: <EditarAluno />
             },
             {
@@ -25,8 +26,8 @@ export const router = createBrowserRouter([
                 element: <ListarAlunos />
             },
             {
-                path: 'deletar-aluno',
-                element: <DeletarAluno />
+                path: '/listar-alunos-por-curso',
+                element: <ListarAlunosPorCurso />
             }
         ]
     }
